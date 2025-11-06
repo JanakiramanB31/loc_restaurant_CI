@@ -61,6 +61,11 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" autocomplete="off" value="<?php echo $this->input->post('price') ?>"/>
+                </div>
+
+                <div class="form-group">
                   <label for="description">Description</label>
                   <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
                   description" autocomplete="off">
@@ -77,53 +82,21 @@
                   </select>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="store">Store</label>
-                   <select class="form-control select_group" id="store" name="store[]" multiple="multiple">
-                    <?php foreach ($stores as $k => $v): ?>
-                      <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
-                    <?php endforeach ?>
+                  <select class="form-control select_group" id="store" name="store[]" multiple="multiple">
+                    <?php //foreach ($stores as $k => $v): ?>
+                      <option value="<?php // echo $v['id'] ?>"><?php // echo $v['name'] ?></option>
+                    <?php //endforeach ?>
                   </select>
-                </div>
-
-                <div style="display: flex;gap: 15px;">
-                  <div style="width: 50%;" class="form-group">
-                    <label for="store">Set different price based on size</label>
-                    <select class="form-control" id="set_different_sizes" name="set_different_sizes">
-                      <option value="1">Yes</option>
-                      <option value="0">No</option>
-                    </select>
-                  </div>
-
-                  <div style="width: 50%;" class="form-group">
-                    <label for="store">Active</label>
-                    <select class="form-control" id="active" name="active">
-                      <option value="1">Yes</option>
-                      <option value="2">No</option>
-                    </select>
-                  </div>
-                </div>
+                </div> -->
 
                 <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" autocomplete="off" value="<?php echo $this->input->post('price') ?>"/>
-                </div>
-
-                <div >
-                  <div style="display: flex;gap: 15px;">
-                    <label style="width: 50%;" for="size[]">Size</label>
-                    <label style="width: 50%;" for="price[]">Price</label>
-                  </div>
-
-                  <div style="display: flex;gap: 15px;">
-                    <div style="width: 50%;" class="form-group">
-                      <input type="text" class="form-control" id="size" name="size[]" placeholder="Enter Size" autocomplete="off" value="<?php echo $this->input->post('size') ?>"/>
-                    </div>
-                    <div style="width: 50%;" class="form-group">
-                      <input type="text" class="form-control" id="price" name="price[]" placeholder="Enter price" autocomplete="off" value="<?php echo $this->input->post('price') ?>"/>
-                    </div>
-                  </div>
-
+                  <label for="store">Active</label>
+                  <select class="form-control" id="active" name="active">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                  </select>
                 </div>
 
               </div>

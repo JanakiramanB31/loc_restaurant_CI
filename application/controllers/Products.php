@@ -42,11 +42,11 @@ class Products extends Admin_Controller
 		$result = array('data' => array());
 
 		$data = $this->model_products->getProductData();
-
+        // echo '<pre>';
+        // print_r($data);
+        // exit;
 		foreach ($data as $key => $value) {
             $store_ids = json_decode($value['store_id']);
-            
-            
             $store_name = array();
             foreach ($store_ids as $k => $v) {
                 $store_data = $this->model_stores->getStoresData($v);
@@ -214,7 +214,8 @@ class Products extends Admin_Controller
         		'image' => $upload_image,
         		'description' => $this->input->post('description'),
         		'category_id' => json_encode($this->input->post('category')),
-                'store_id' => json_encode($this->input->post('store')),
+                // 'store_id' => json_encode($this->input->post('store')),
+                'store_id' => json_encode(array(1)),
         		'active' => $this->input->post('active'),
         	);
 
@@ -238,7 +239,7 @@ class Products extends Admin_Controller
         	// $this->data['attributes'] = $attributes_final_data;
 			// $this->data['brands'] = $this->model_brands->getActiveBrands();        	
 			$this->data['category'] = $this->model_category->getActiveCategory();        	
-			$this->data['stores'] = $this->model_stores->getActiveStore();        	
+			// $this->data['stores'] = $this->model_stores->getActiveStore();        	
 
             $this->render_template('products/create', $this->data);
         }	
@@ -303,7 +304,7 @@ class Products extends Admin_Controller
                 'price' => $this->input->post('price'),
                 'description' => $this->input->post('description'),
                 'category_id' => json_encode($this->input->post('category')),
-                'store_id' => json_encode($this->input->post('store')),
+                'store_id' => json_encode(array(1)),
                 'active' => $this->input->post('active'),
             );
 
@@ -328,7 +329,7 @@ class Products extends Admin_Controller
         else {
                     
             $this->data['category'] = $this->model_category->getActiveCategory();           
-            $this->data['stores'] = $this->model_stores->getActiveStore();          
+            // $this->data['stores'] = $this->model_stores->getActiveStore();          
 
             $product_data = $this->model_products->getProductData($product_id);
             $this->data['product_data'] = $product_data;

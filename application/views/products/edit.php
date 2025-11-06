@@ -88,15 +88,15 @@
                   </select>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="store">Store</label>
-                  <?php $store_data = json_decode($product_data['store_id']); ?>
+                  <?php // $store_data = json_decode($product_data['store_id']); ?>
                   <select class="form-control select_group" id="store" name="store[]" multiple="multiple">
-                    <?php foreach ($stores as $k => $v): ?>
-                      <option value="<?php echo $v['id'] ?>" <?php if(in_array($v['id'], $store_data)) { echo 'selected="selected"'; } ?>><?php echo $v['name'] ?></option>
-                    <?php endforeach ?>
+                    <?php // foreach ($stores as $k => $v): ?>
+                      <option value="<?php //echo $v['id'] ?>" <?php //if(in_array($v['id'], $store_data)) { echo 'selected="selected"'; } ?>><?php //echo $v['name'] ?></option>
+                    <?php //endforeach ?>
                   </select>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                   <label for="store">Active</label>
